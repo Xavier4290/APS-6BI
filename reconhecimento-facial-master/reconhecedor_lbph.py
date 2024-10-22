@@ -1,6 +1,10 @@
 import cv2
 import numpy as np
 from datetime import datetime
+import subprocess
+
+subprocess.run(["python", "reconhecedor_eigenfaces.py"])
+subprocess.run(["python", "reconhecedor_fisherfaces.py"])
 
 # Caminho haarcascade
 detectorFace = cv2.CascadeClassifier('cascade/haarcascade_frontalface_default.xml')

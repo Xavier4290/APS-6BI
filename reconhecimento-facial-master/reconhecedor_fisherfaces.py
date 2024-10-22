@@ -1,5 +1,5 @@
 import cv2
-import nump3y as np
+import numpy as np
 from datetime import datetime
 
 # Caminho haarcascade
@@ -8,7 +8,7 @@ detectorOlho = cv2.CascadeClassifier('cascade/haarcascade-eye.xml')
 
 # Instanciado Fisher Faces Recognizer
 reconhecedor = cv2.face.FisherFaceRecognizer_create()
-reconhecedor.read("classifier/classificadorFisher.yml")
+reconhecedor.read('classifier/classificadorEigen.yml')
 
 height, width = 220, 220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
