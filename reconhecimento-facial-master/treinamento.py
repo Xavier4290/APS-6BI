@@ -11,7 +11,7 @@ def getImageWithId():
         Percorrer diretorio fotos, ler todas imagens com CV2 e organizar
         conjunto de faces com seus respectivos ids
     '''
-    pathsImages = [os.path.join('fotos2', f) for f in os.listdir('fotos2')]
+    pathsImages = [os.path.join('fotos', f) for f in os.listdir('fotos')]
     faces = []
     ids = []
 

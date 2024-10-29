@@ -14,7 +14,7 @@ facePathOlho = cv2.CascadeClassifier(cascPathOlho)
 video_capture = cv2.VideoCapture(0)
 
 # Caminho do arquivo que queremos mover
-arquivo = 'imagem.jpg'
+arquivo = 'pessoa.jpg'
 
 # Verifica se a pasta 'fotos' já existe, se não, cria a pasta
 pasta_destino = 'fotos'
@@ -29,7 +29,7 @@ else:
     print(f"Arquivo '{arquivo}' não encontrado.")
 
 increment = 1
-numMostras = 10
+numMostras = 50
 id = 0
 width, height = 220, 220
 print('Capturando as faces...')
@@ -77,6 +77,7 @@ while True:
 
             print(f'[Foto capturada com sucesso] - ', np.average(gray))
             increment += 1
+            # id += 1
 
            
             # Parar o loop caso tenhamos capturado o número desejado de imagens
@@ -85,13 +86,15 @@ while True:
         if increment > numMostras:
             break
     if increment > numMostras:
+        id += 1
         break
 
     # Incrementa o ID para cada nova pessoa detectada
-    id += 1
+    #  id += 1
 
     cv2.imshow('Face', image)
     cv2.waitKey(1)
+
 
 print('Fotos capturadas com sucesso :)')
 video_capture.release()
