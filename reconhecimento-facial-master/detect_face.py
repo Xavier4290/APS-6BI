@@ -2,7 +2,6 @@ import cv2
 import os
 import numpy as np
 import shutil
-import time
 
 # Caminho Haarcascade
 cascPath = 'cascade/haarcascade_frontalface_default.xml'
@@ -30,7 +29,7 @@ else:
 
 increment = 1
 numMostras = 50
-id = 0
+id = int(input("Digite o número do ID: "))
 width, height = 220, 220
 print('Capturando as faces...')
 
@@ -79,14 +78,12 @@ while True:
             increment += 1
             # id += 1
 
-           
             # Parar o loop caso tenhamos capturado o número desejado de imagens
             if increment > numMostras:
                 break
         if increment > numMostras:
             break
     if increment > numMostras:
-        id += 1
         break
 
     # Incrementa o ID para cada nova pessoa detectada

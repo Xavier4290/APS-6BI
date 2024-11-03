@@ -35,21 +35,19 @@ while (True):
         # Fazendo comparacao da imagem detectada
         id, confianca = reconhecedor.predict(image)
 
-        # match id:
-        #     case 1:
-        #         name = 'Guilherme'
-        #     case 2:
-        #         name = 'Gustavo'
-        #     case 3:
-        #         name = 'Maicon'
-        #     case 4:
-        #         name = 'Felippe'
-        #     case 5:
-        #         name = 'Chris'
-        
-        if id == 1: name = 'Guilherme'
-        else: name = 'Nao identificado'
-            
+        match id:
+                case 1:
+                    name = "Guilherme"
+                case 2:
+                    name = "Gustavo"
+                case 3:
+                    name = "Felippe"
+                case 4:
+                    name = "Chris"
+                case 5:
+                    name = "Maicon"
+                case _:
+                    name = "Não indentificado"
 
         if id not in lista:
             lista.append(id)

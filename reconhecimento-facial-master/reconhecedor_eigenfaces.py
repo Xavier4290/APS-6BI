@@ -44,8 +44,19 @@ while (True):
             # Fazendo comparacao da imagem detectada
             id, confianca = reconhecedor.predict(image)
 
-            if id == 1: name = 'David Lucas'
-            else: name = 'Nao identificado'
+            match id:
+                case 1:
+                    name = "Guilherme"
+                case 2:
+                    name = "Gustavo"
+                case 3:
+                    name = "Felippe"
+                case 4:
+                    name = "Chris"
+                case 5:
+                    name = "Maicon"
+                case _:
+                    name = "Não indentificado"
 
             # Escrevendo texto no frame
             cv2.putText(imagem, name, (x, y + (h + 24)), font, 1, (0, 255, 0))
